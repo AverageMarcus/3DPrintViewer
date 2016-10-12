@@ -15,15 +15,15 @@
   light.position.multiplyScalar(40);
   scene.add(light);
 
-  var material = new THREE.MeshPhongMaterial( { color: 0xff5533, specular: 0x111111, shininess: 200 } );
+  var material = new THREE.MeshPhongMaterial( { color: 0x603311, specular: 0x111111, shininess: 200 } );
 
   var stlLoader = new T.STLLoader();
   var objModel;
-  stlLoader.load('3DBenchy.stl', function(geometry) {
+  stlLoader.load('Groot.stl', function(geometry) {
     objModel = new THREE.Mesh( geometry, material );
     objModel.position.set( 0, -10, 5 );
     objModel.rotation.set(-Math.PI / 2, 0, 0 );
-    objModel.scale.set( 0.5, 0.5, 0.5 );
+    objModel.scale.set( 0.20, 0.20, 0.20 );
     objModel.castShadow = true;
     objModel.receiveShadow = true;
     objModel.geometry.applyMatrix(new THREE.Matrix4().makeTranslation( -0, -0, 0 ) );
